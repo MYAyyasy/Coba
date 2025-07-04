@@ -8,7 +8,7 @@
     <script>
         async function sendData() {
             const input = document.getElementById('inputData').value;
-            const response = await fetch('https://python-api-ashy-one.vercel.app/', {
+            const response = await fetch('https://my-vercel-app-gules.vercel.app/api/process', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ input: input })
