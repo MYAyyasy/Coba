@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="inputData" placeholder="Ketik sesuatu...">
+    <button onclick="sendData()">Kirim ke Python</button>
+    <div id="result"></div>
+
+    <script>
+        async function sendData() {
+            const input = document.getElementById('inputData').value;
+            const response = await fetch('https://vercel-python-api.vercel.app/api/process', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ input: input })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = data.result;
+        }
+    </script>
+</body>
+</html>
