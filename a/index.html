@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analysis Tool</h1>
+        
+        <div class="upload-section">
+            <input type="file" id="fileInput" accept=".csv,.xlsx">
+            <button id="uploadBtn">Upload & Analyze</button>
+        </div>
+        
+        <div id="results">
+            <div class="summary-section">
+                <h2>Data Summary</h2>
+                <div id="summary"></div>
+            </div>
+            
+            <div class="visualization-section">
+                <h2>Visualizations</h2>
+                <div id="plots"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
