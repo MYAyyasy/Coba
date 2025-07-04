@@ -6,24 +6,22 @@
   <p id="result"></p>
 
   <script>
-      async function sendData() {
-        const input = document.getElementById('inputText').value;
-        try {
-          const response = await fetch('https://my-vercel-app-lilac-three.vercel.app//api/process', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ input: input })
-          });
-          
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          
-          const result = await response.json();
-          document.getElementById('result').innerText = result.data;
-        } catch (error) {
-          console.error('Error:', error);
-          document.getElementById('result').innerText = 'Gagal mengirim data: ' + error.message;
-        }
+    async function sendData() {
+      const input = document.getElementById('inputText').value;
+      try {
+        const response = await fetch('https://my-vercel-app-gules.vercel.app/api/process', {
+          method: 'POST',
+          mode: 'cors',  // Explicitly enable CORS
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ input: input })
+        });
+        const result = await response.json();
+        document.getElementById('result').innerText = result.data;
+      } catch (error) {
+        console.error("Error:", error);
+        document.getElementById('result').innerText = "Gagal mengirim: " + error.message;
       }
-    </script>
+    }
+  </script>
 </body>
 </html>
